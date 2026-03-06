@@ -47,24 +47,26 @@ session_start();
     <?php
       require 'db.php';
       $grandTotal = 0;
+      $stmt = $conn->prepare("SELECT name, price FROM laptops WHERE id = ?");
 
       foreach ($_SESSION['cart'] as $item):
-        $laptop_id = $item['id'];
-        $qty = $item['quantity'];
+        $laptop_id = intval($item['id']);
+        $qty = intval($item['quantity']);
 
-        $q = $conn->query("SELECT * FROM laptops WHERE id = $laptop_id");
-        $laptop = $q->fetch_assoc();
+        $stmt->bind_param("i", $laptop_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $laptop = $result->fetch_assoc();
 
-        $price = $laptop['price'];
-        $subtotal = $price * $qty;
-        $grandTotal += $subtotal;
+        if($laptop) {
+            $price = $laptop['price'];
+            $subtotal = $price * $qty;
+            $grandTotal += $subtotal;
     ?>
 
       <tr>
         <td><?php echo htmlspecialchars($laptop['name']); ?></td>
-
         <td><?php echo number_format($price, 2); ?></td>
-
         <td>
           <input type="number" 
                  class="qty-input"
@@ -72,18 +74,20 @@ session_start();
                  min="1"
                  data-price="<?php echo $price; ?>">
         </td>
-
         <td class="subtotal"><?php echo number_format($subtotal, 2); ?></td>
       </tr>
 
-    <?php endforeach; ?>
+    <?php 
+        }
+      endforeach; 
+      $stmt->close();
+    ?>
 
     </tbody>
   </table>
 
   <div class="cart-summary">
     <h3>Total: Ksh <span id="grandTotal"><?php echo number_format($grandTotal, 2); ?></span></h3>
-
     <a href="checkout.php" class="btn">Proceed to Checkout</a>
   </div>
 
