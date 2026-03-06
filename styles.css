@@ -1,26 +1,24 @@
-/* ========== Global Reset ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern Font */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 body {
-  background: #0f172a; /* Dark Blue Background */
+  background: #0f172a; 
   color: #e2e8f0;
   padding-bottom: 50px;
 }
 
-/* ========== Header & Navigation ========== */
 header {
-  background: #1e293b; /* Slightly lighter dark blue */
+  background: #1e293b; 
   color: white;
   padding: 18px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Deep Shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -33,7 +31,7 @@ header h1 {
 }
 
 nav a {
-  color: #94a3b8; /* Light gray for links */
+  color: #94a3b8; 
   text-decoration: none;
   margin-left: 25px;
   font-size: 17px;
@@ -41,13 +39,12 @@ nav a {
 }
 
 nav a:hover {
-  color: #3b82f6; /* Vibrant Blue Accent on hover */
+  color: #3b82f6; 
   text-decoration: none;
 }
 
-/* ========== Cart Badge ========== */
 .cart-badge {
-  background: #ef4444; /* Original red for urgency */
+  background: #ef4444; 
   padding: 4px 9px;
   border-radius: 50%;
   margin-left: 8px;
@@ -56,32 +53,29 @@ nav a:hover {
   line-height: 1;
 }
 
-/* Pulse animation when item added */
 .pulse {
   animation: pulseAnim 0.4s;
 }
 
 @keyframes pulseAnim {
   0%   { transform: scale(1); }
-  50%  { transform: scale(1.4); } /* Deeper pulse */
+  50%  { transform: scale(1.4); } 
   100% { transform: scale(1); }
 }
 
-/* ========== Container ========== */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: 30px auto;
 }
 
-/* ========== Hero Section ========== */
 .hero {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8); /* Blue Gradient */
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
   color: white;
   padding: 60px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4); /* Glowing effect */
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4); 
 }
 
 .hero h2 {
@@ -96,7 +90,7 @@ nav a:hover {
 }
 
 .btn {
-  background: #0d9488; /* Teal/Cyan Button */
+  background: #0d9488; 
   padding: 12px 24px;
   border-radius: 8px;
   color: white;
@@ -110,7 +104,7 @@ nav a:hover {
 
 .btn:hover {
   background: #0f766e;
-  transform: translateY(-2px); /* Lift effect */
+  transform: translateY(-2px); 
   box-shadow: 0 4px 10px rgba(13, 148, 136, 0.4);
 }
 
@@ -123,7 +117,6 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* ========== Product Grid & Cards ========== */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -132,23 +125,23 @@ nav a:hover {
 }
 
 .product-card {
-  background: #1e293b; /* Dark card background */
+  background: #1e293b; 
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid #334155; /* Subtle border */
+  border: 1px solid #334155; 
 }
 
 .product-card:hover {
-  transform: translateY(-5px); /* Lift on hover */
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2); /* Subtle blue glow */
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2); 
 }
 
 .product-card img {
   width: 100%;
-  height: 180px; /* Slightly taller image */
+  height: 180px; 
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
@@ -168,11 +161,10 @@ nav a:hover {
 .price {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #3b82f6; /* Vibrant price color */
+  color: #3b82f6; 
   margin: 15px 0;
 }
 
-/* ========== Forms & Input Fields ========== */
 form input[type="number"],
 form input[type="text"],
 form input[type="email"] {
@@ -181,7 +173,7 @@ form input[type="email"] {
   margin: 8px 0 15px 0;
   border: 1px solid #334155;
   border-radius: 5px;
-  background: #0f172a; /* Input background */
+  background: #0f172a; 
   color: #e2e8f0;
 }
 
@@ -189,7 +181,6 @@ form input[type="email"] {
   margin-bottom: 15px;
 }
 
-/* ========== Cart Table ========== */
 .cart-table {
   width: 100%;
   border-collapse: collapse;
@@ -218,7 +209,6 @@ form input[type="email"] {
   color: #e2e8f0;
 }
 
-/* ========== Cart Summary ========== */
 .cart-summary {
   text-align: right;
   margin-top: 30px;
@@ -227,19 +217,18 @@ form input[type="email"] {
   color: white;
 }
 
-/* ========== Toast Notification (Fashy!) ========== */
 .toast {
   position: fixed;
   bottom: 30px;
-  right: -350px; /* hidden */
-  background: linear-gradient(90deg, #10b981, #06b6d4); /* Vibrant Gradient */
+  right: -350px; 
+  background: linear-gradient(90deg, #10b981, #06b6d4); 
   color: white;
   padding: 15px 22px;
   border-radius: 10px;
   display: flex;
   gap: 12px;
   align-items: center;
-  transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.27); /* Bounce transition */
+  transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.27); 
   box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
   font-weight: bold;
 }
@@ -248,14 +237,13 @@ form input[type="email"] {
   right: 30px;
 }
 
-/* ========== Deal of the Day Styles (Added from your script.js logic) ========== */
 .deal-of-day {
   position: relative;
   overflow: hidden;
-  border: 3px solid #f97316; /* Orange border for emphasis */
+  border: 3px solid #f97316; 
   border-radius: 12px;
-  transform: scale(1.02); /* Slightly larger */
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.6); /* Orange glow */
+  transform: scale(1.02); 
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.6); 
 }
 
 .deal-ribbon {
@@ -273,7 +261,6 @@ form input[type="email"] {
   z-index: 10;
 }
 
-/* Utility for error messages */
 .error {
     color: #ef4444;
     font-weight: bold;
